@@ -1,96 +1,67 @@
-# Sorting an Array of 0s, 1s, and 2s (Dutch National Flag Algorithm)
+# 📘 Explanation: Sorting an Array of 0s, 1s, and 2s (Dutch National Flag Algorithm)
 
+## 1. Problem Statement
+- You are given an array containing only `0`, `1`, and `2`.
+- Task: Sort the array in **increasing order**.
+- Constraints:
+  - Must run in **O(n)** time.
+  - Must use **O(1)** extra space (in-place sorting).
 
+---
 
-1\. Problem Statement
+## 2. Why Not Use Normal Sorting?
+- Python’s `sorted()` is **O(n log n)** and uses extra memory.  
+- Here we need **linear time** (`O(n)`) and **no extra space** (`O(1)`).
 
+---
 
+## 3. Algorithm Used — Dutch National Flag (DNF)
+- Developed by **Edsger Dijkstra**.
+- Idea: Partition the array into 3 regions using **3 pointers**:
+  - `low` → boundary for `0`s
+  - `mid` → current element to check
+  - `high` → boundary for `2`s
 
-* You are given an array containing only 0, 1, and 2.
+At any point:
+- `[0 .. low-1]` → all `0`s  
+- `[low .. mid-1]` → all `1`s  
+- `[mid .. high]` → unknown (to be processed)  
+- `[high+1 .. end]` → all `2`s  
 
+---
 
 
-* Task: Sort the array in increasing order.
+## 4. Pseudocode
+```
+low = 0, mid = 0, high = n-1
+while mid <= high:
+    if arr[mid] == 0:
+        swap(arr[low], arr[mid])
+        low++, mid++
+    else if arr[mid] == 1:
+        mid++
+    else:
+        swap(arr[mid], arr[high])
+        high--
+```
 
+---
 
 
-* Constraints:
+## 5. Edge Cases
+- Empty array: high = -1, loop doesn’t run; returns [].
 
+- All equal elements: Logic still holds (only one branch runs).
 
+- Already sorted: Minimal swaps; still linear.
+- Mixed order: Correctly partitions and sorts.
 
-Must run in O(n) time.
 
+## 6. Complexity Analysis
+- **Time Complexity:** `O(n)` (each element is inspected at most once).  
+- **Space Complexity:** `O(1)` (only uses three pointers).  
 
 
-Must use O(1) extra space (in-place sorting).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* We maintain three regions using pointers low, mid, and high.
-
-
-
-* When we see a 0 at mid, we swap it left (to low), because all 0s must be at the beginning.
-
-
-
-* When we see a 1, it’s already in the correct middle region, so just move mid.
-
-
-
-* When we see a 2, we swap it right (to high), because all 2s must be at the end. We don’t advance mid after this swap because the element we just swapped in hasn’t been inspected yet.
-
-#### 
-
-#### Edge cases covered
-
-
-
-* Empty array: high = -1, loop doesn’t run; returns \[].
-
-
-
-* All equal elements: Logic still holds (only one branch runs).
-
-
-
-* Already sorted: Minimal swaps; still linear.
-
-
-
-* Mixed order: Correctly partitions and sorts.
-
-
-
-
-
-#### Complexity
-
-
-
-* Time: O(n) — each element is examined at most once.
-
-
-
-* Space: O(1) — only the three pointers are used (in-place).
 
 
 
