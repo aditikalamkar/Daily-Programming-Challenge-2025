@@ -1,5 +1,5 @@
 
-# Missing Number Problem (Sum Formula Approach)
+# 📘Find the Missing Number  (Sum Formula Approach)
 
 ## 1. Problem Statement
 - You are given an array arr containing n-1 distinct integers.
