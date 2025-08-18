@@ -11,5 +11,5 @@ A 30-day coding challenge to sharpen problem-solving skills, strengthen algorith
 | 1   | [Sort 0s, 1s, and 2s (Dutch National Flag)](https://github.com/aditikalamkar/Daily-Programming-Challenge-2025/tree/main/Day-01) |
 | 2   | [Find the Missing Number](https://github.com/aditikalamkar/Daily-Programming-Challenge-2025/tree/main/Day-02) |
 | 3   | [Find the Duplicate Number](https://github.com/aditikalamkar/Daily-Programming-Challenge-2025/tree/main/Day-03) |
-
+| 4   | [Merge Two Sorted Arrays (In-Place)](https://github.com/aditikalamkar/Daily-Programming-Challenge-2025/tree/main/Day-04) |
 
